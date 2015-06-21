@@ -1,0 +1,17 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-schema="MAN"/>
+  <table-filter match-name="TEAM"/>
+  <table-filter match-name="SKILLSPECIALIZATION"/>
+  <table-filter match-name="SKILLTYPE"/>
+  <table-filter match-name="LOBS"/>
+  <table-filter match-name="TITLE"/>
+  <table-filter match-name="LEVELLOOKUP"/>
+  <table-filter match-name="SKILLTRAININGREQUIRED"/>
+  <table-filter match-name="EMPLOYEESKILL"/>
+  <table-filter match-name="SKILLSOURCE"/>
+  <table-filter match-name="SKILLCATEGORY"/>
+  <table-filter match-name="EMPLOYEE"/>
+  <table-filter match-name="SKILLSOURCETYPE"/>
+</hibernate-reverse-engineering>

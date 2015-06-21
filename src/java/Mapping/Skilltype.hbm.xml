@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 19, 2015 3:46:43 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Mapping.Skilltype" table="SKILLTYPE" schema="MAN">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="skillcategory" class="Mapping.Skillcategory" fetch="select">
+            <column name="CATEGORYID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="NAME" length="50" not-null="true" />
+        </property>
+        <set name="skillspecializations" inverse="true">
+            <key>
+                <column name="SKILLTYPEID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="Mapping.Skillspecialization" />
+        </set>
+    </class>
+</hibernate-mapping>

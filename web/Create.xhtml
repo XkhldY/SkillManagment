@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+      
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+     
+    <h:form>
+        <h:panelGrid columns="2">
+                    <h:outputLabel value="name:" for="name" />
+                    <h:inputText id="name" value="#{fuckerrrr.selected.name}" requiredMessage="tetl3" title="name" required="true"/>
+                    
+                    
+                    <h:outputLabel value="teamID" for="teamid" />
+                    <h:selectOneMenu id="teamid" value="#{fuckerrrr.selected.team}" title="teamid" required="true" 
+                                     converter="#{teamConverter}"    requiredMessage="please">
+                        
+                        <f:selectItems value="#{teamController.teams}" var="team"/>
+                    </h:selectOneMenu>
+                    
+                    <h:outputLabel value="TitleID" for="titleid" />
+                    <h:selectOneMenu id="TitleID" value="#{fuckerrrr.selected.title}" title="titleID" required="true" 
+                                     converter="#{titleConverter}" requiredMessage="please">
+                        <f:selectItems value="#{titleController.titles}"/>
+                    </h:selectOneMenu>
+                    
+                
+                </h:panelGrid>
+        <br />
+        <br />
+        <h:commandLink action="#{fuckerrrr.saveEmp()}"  value="Save"/>
+        </h:form>          
+  
+    </h:body>
+</html>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 19, 2015 3:46:43 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Mapping.Levellookup" table="LEVELLOOKUP" schema="MAN">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="levelname" type="string">
+            <column name="LEVELNAME" length="20" not-null="true" />
+        </property>
+        <set name="employeeskillsForSkilllevel" inverse="true">
+            <key>
+                <column name="SKILLLEVEL" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="Mapping.Employeeskill" />
+        </set>
+        <set name="employeeskillsForTargetlevel" inverse="true">
+            <key>
+                <column name="TARGETLEVEL" precision="22" scale="0" />
+            </key>
+            <one-to-many class="Mapping.Employeeskill" />
+        </set>
+    </class>
+</hibernate-mapping>

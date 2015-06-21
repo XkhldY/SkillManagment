@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 19, 2015 3:46:43 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Mapping.Skilltrainingrequired" table="SKILLTRAININGREQUIRED" schema="MAN">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employeeskill" class="Mapping.Employeeskill" fetch="select">
+            <column name="EMPLOYEESKILLID" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="trainingid" type="big_decimal">
+            <column name="TRAININGID" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="trainingname" type="string">
+            <column name="TRAININGNAME" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

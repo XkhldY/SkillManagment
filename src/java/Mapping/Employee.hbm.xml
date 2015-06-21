@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 19, 2015 3:46:43 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Mapping.Employee" table="EMPLOYEE" schema="MAN">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="lobs" class="Mapping.Lobs" fetch="select">
+            <column name="DEPID" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="team" class="Mapping.Team" fetch="select">
+            <column name="TEAMID" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="title" class="Mapping.Title" fetch="select">
+            <column name="TITLEID" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="NAME" length="100" not-null="true" />
+        </property>
+        <property name="graduationyear" type="big_decimal">
+            <column name="GRADUATIONYEAR" precision="22" scale="0" />
+        </property>
+        <property name="mobile" type="string">
+            <column name="MOBILE" length="50" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="100" />
+        </property>
+        <property name="major" type="string">
+            <column name="MAJOR" length="200" />
+        </property>
+        <property name="faculty" type="string">
+            <column name="FACULTY" length="200" />
+        </property>
+        <property name="employmentyear" type="big_decimal">
+            <column name="EMPLOYMENTYEAR" precision="22" scale="0" />
+        </property>
+        <property name="localemploymentyear" type="big_decimal">
+            <column name="LOCALEMPLOYMENTYEAR" precision="22" scale="0" />
+        </property>
+        <property name="location" type="string">
+            <column name="LOCATION" length="50" />
+        </property>
+        <set name="employeeskills" inverse="true">
+            <key>
+                <column name="EMPID" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="Mapping.Employeeskill" />
+        </set>
+    </class>
+</hibernate-mapping>

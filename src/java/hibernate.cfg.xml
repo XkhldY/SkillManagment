@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+    <property name="hibernate.connection.username">man</property>
+    <property name="hibernate.connection.password">man</property>
+    <mapping resource="Mapping/Skilltype.hbm.xml"/>
+    <mapping resource="Mapping/Employee.hbm.xml"/>
+    <mapping resource="Mapping/Levellookup.hbm.xml"/>
+    <mapping resource="Mapping/Skillcategory.hbm.xml"/>
+    <mapping resource="Mapping/Skillsourcetype.hbm.xml"/>
+    <mapping resource="Mapping/Employeeskill.hbm.xml"/>
+    <mapping resource="Mapping/Skillsource.hbm.xml"/>
+    <mapping resource="Mapping/Skilltrainingrequired.hbm.xml"/>
+    <mapping resource="Mapping/Skillspecialization.hbm.xml"/>
+    <mapping resource="Mapping/Title.hbm.xml"/>
+    <mapping resource="Mapping/Team.hbm.xml"/>
+    <mapping resource="Mapping/Lobs.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

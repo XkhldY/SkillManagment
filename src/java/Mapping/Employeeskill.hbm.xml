@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 19, 2015 3:46:43 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Mapping.Employeeskill" table="EMPLOYEESKILL" schema="MAN">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="levellookupBySkilllevel" class="Mapping.Levellookup" fetch="select">
+            <column name="SKILLLEVEL" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="levellookupByTargetlevel" class="Mapping.Levellookup" fetch="select">
+            <column name="TARGETLEVEL" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="employee" class="Mapping.Employee" fetch="select">
+            <column name="EMPID" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="skillspecialization" class="Mapping.Skillspecialization" fetch="select">
+            <column name="SKILLSPECID" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="skillsource" class="Mapping.Skillsource" fetch="select">
+            <column name="SKILLSOURCEID" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="whenshoulddone" type="date">
+            <column name="WHENSHOULDDONE" length="7" />
+        </property>
+        <property name="whenactualdone" type="date">
+            <column name="WHENACTUALDONE" length="7" />
+        </property>
+        <property name="numberofyears" type="big_decimal">
+            <column name="NUMBEROFYEARS" precision="22" scale="0" />
+        </property>
+        <set name="skilltrainingrequireds" inverse="true">
+            <key>
+                <column name="EMPLOYEESKILLID" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="Mapping.Skilltrainingrequired" />
+        </set>
+    </class>
+</hibernate-mapping>
