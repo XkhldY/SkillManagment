@@ -34,7 +34,10 @@ public class EmployeeHelper {
     {
         Transaction tx=s.beginTransaction();
         try{
-            emp.setId(BigDecimal.valueOf(Long.parseLong("9")));
+            List<Employee> list=getEmployee();
+            Employee x=list.get(list.size()-1);
+            emp.setId(x.getId().add(new BigDecimal(1)));
+            
             s.save(emp);
             tx.commit();
             return "done";

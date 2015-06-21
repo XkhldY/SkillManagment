@@ -13,18 +13,18 @@
     <h:form>
         <h:panelGrid columns="2">
                     <h:outputLabel value="name:" for="name" />
-                    <h:inputText id="name" value="#{fuckerrrr.selected.name}" requiredMessage="tetl3" title="name" required="true"/>
+                    <h:inputText id="name" value="#{employeeController.selected.name}" requiredMessage="tetl3" title="name" required="true"/>
                     
                     
                     <h:outputLabel value="teamID" for="teamid" />
-                    <h:selectOneMenu id="teamid" value="#{fuckerrrr.selected.team}" title="teamid" required="true" 
+                    <h:selectOneMenu id="teamid" value="#{employeeController.selected.team}" title="teamid" required="true" 
                                      converter="#{teamConverter}"    requiredMessage="please">
                         
                         <f:selectItems value="#{teamController.teams}" var="team"/>
                     </h:selectOneMenu>
                     
                     <h:outputLabel value="TitleID" for="titleid" />
-                    <h:selectOneMenu id="TitleID" value="#{fuckerrrr.selected.title}" title="titleID" required="true" 
+                    <h:selectOneMenu id="TitleID" value="#{employeeController.selected.title}" title="titleID" required="true" 
                                      converter="#{titleConverter}" requiredMessage="please">
                         <f:selectItems value="#{titleController.titles}"/>
                     </h:selectOneMenu>
@@ -33,7 +33,7 @@
                 </h:panelGrid>
         <br />
         <br />
-        <h:commandLink action="#{fuckerrrr.saveEmp()}"  value="Save"/>
+        <h:commandLink action="#{employeeController.saveEmp()}"  value="Save" />
         </h:form>          
   
     </h:body>

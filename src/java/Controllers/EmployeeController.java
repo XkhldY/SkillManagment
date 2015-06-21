@@ -18,7 +18,7 @@ import javax.faces.model.ListDataModel;
  *
  * @author giza
  */
-@ManagedBean(name="fuckerrrr")
+@ManagedBean
 @SessionScoped
 public class EmployeeController implements Serializable{
 
